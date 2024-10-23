@@ -1,11 +1,10 @@
 @extends('layout.dashboard')
-@section('title_page_web', 'Categoria')
-@section('title_view', 'Categoria Page')
+@section('title_page_web', 'Promocion')
+@section('title_view', 'Promocion Page')
 
 @section('content')
-
     <div class="mb-4">
-        <a href="{{ route('categoria.create') }}" class="btn" style="background: #96CEB4;">Nuevo registro <i
+        <a href="{{ route('promocion.create') }}" class="btn" style="background: #96CEB4;">Nuevo registro <i
                 class="fas fa-folder-plus"></i></a>
     </div>
 
@@ -29,13 +28,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($categorias as $categoria)
+            @foreach ($promociones as $promocion)
                 <tr>
-                    <td>{{ $categoria['id'] }}</td>
-                    <td>{{ $categoria['nombre'] }}</td>
-                    <td>{{ $categoria['descripcion'] }}</td>
+                    <td>{{ $promocion['id'] }}</td>
+                    <td>{{ $promocion['nombre'] }}</td>
+                    <td>{{ $promocion['descripcion'] }}</td>
                     <td>
-                        @if ($categoria['estado'] == 1)
+                        @if ($promocion['estado'] == 1)
                             <span class="badge badge-success">Activo</span>
                         @else
                             <span class="badge badge-warning">Inactivo</span>
@@ -43,22 +42,21 @@
                     </td>
                     <td>
                         <div class="btn-group">
-                            <a href="{{ route('categoria.edit', $categoria['id']) }}" class="btn mr-1"
+                            <a href="{{ route('promocion.edit', $promocion['id']) }}" class="btn mr-1"
                                 style="background: #96CEB4;"><i class="fas fa-edit "></i></a>
 
-                            
-                                <form action="{{ route('categoria.destroy', $categoria['id']) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn ml-1" style="background: #96CEB4;">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </form>
+
+                            <form action="{{ route('promocion.destroy', $promocion['id']) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn ml-1" style="background: #96CEB4;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
                         </div>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
 @endsection

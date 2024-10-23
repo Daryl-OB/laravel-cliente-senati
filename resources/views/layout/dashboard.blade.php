@@ -42,22 +42,23 @@
             style="position: fixed; top: 0; height: 100vh; overflow-y: auto;">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link text-center">
-                <span class="brand-text font-weight-light">CompanyLTE</span>
+                <span class="brand-text font-weight-light">Zona Vip GYM</span>
             </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center">
-                    <div id="id_user_auth" class="text-white">{{ Session::get('user.id') }}</div>
+                    {{-- <div id="id_user_auth" class="text-white">{{ Session::get('user.id') }}</div> --}}
                     <div class="info">
                         <a href="" class="d-block m-0">
-                            <div class="text-center text-white">
+                            Usuario: Administrador
+                            {{-- <div class="text-center text-white">
                                 {{ Session::get('user.name') }}
                             </div>
                             <div class="text-center text-white">
                                 {{ Session::get('user.email') }}
-                            </div>
+                            </div> --}}
                         </a>
                     </div>
                 </div>
@@ -69,15 +70,15 @@
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="{{ route('home.index') }}" class="nav-link">
+                            <a href="{{route('home.index')}}" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
-                                    Inicio
+                                    Home
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('categoria.index') }}" class="nav-link">
+                            <a href="{{route('categoria.index')}}" class="nav-link">
                                 <i class="nav-icon fas fa-layer-group"></i>
                                 <p>
                                     Categorias
@@ -85,6 +86,38 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('promocion.index')}}" class="nav-link">
+                                <i class="nav-icon fas fa-tags"></i>
+                                <p>
+                                    Promociones
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('cliente.index')}}" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Clientes
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('metodo.index')}}" class="nav-link">
+                                <i class="nav-icon fas fa-wallet"></i>
+                                <p>
+                                    Métodos de pago
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('subscripcion.index')}}" class="nav-link">
+                                <i class="nav-icon fas fa-file-invoice"></i>
+                                <p>
+                                    Subcripciones
+                                </p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-paste"></i>
                                 <p>
@@ -94,7 +127,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('tareas.index') }}" class="nav-link">
+                                    <a href="" class="nav-link">
                                         <i class="fas fa-check nav-icon"></i>
                                         <p>Completadas</p>
                                     </a>
@@ -112,17 +145,9 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="nav-icon fas fa-tools"></i>
-                                <p>
-                                    Mi perfil
-                                </p>
-                            </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item mb-3">
-                            <a href="{{route('login.index')}}" class="nav-link bg-danger">
+                            <a href="" class="nav-link bg-danger">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>
                                     Cerrar sesión
