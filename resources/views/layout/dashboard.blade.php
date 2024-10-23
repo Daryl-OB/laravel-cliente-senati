@@ -49,7 +49,7 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center">
-                    <div id="id_user_auth" class="d-none">{{ Session::get('user.id') }}</div>
+                    <div id="id_user_auth" class="text-white">{{ Session::get('user.id') }}</div>
                     <div class="info">
                         <a href="" class="d-block m-0">
                             <div class="text-center text-white">

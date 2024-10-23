@@ -16,4 +16,4 @@ Route::get('/registrarse', [AuthController::class, 'registrarse'])->name('login.
 Route::get('/categorias', [CategoryController::class, 'index'])->name('categoria.index');
 Route::get('/tareas', [TareaController::class, 'index'])->name('tareas.index');
 
-
+Route::post('/categorias', [CategoryController::class, 'store'])->name('categorias.store');

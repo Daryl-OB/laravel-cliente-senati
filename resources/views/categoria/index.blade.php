@@ -8,5 +8,12 @@
 
 {{-- CONTENIDO DE LA PAGINA --}}
 @section('content')
-    VISTA CATEGORIA
+    <form action="{{route('categorias.store')}}" method="post">
+        @csrf
+        <input type="text" name="user_id" value="{{ Session::get('user.id') }}">
+        <br>
+        <input type="text" name="nombre">
+        <br>
+        <button type="submit">Crear</button>
+    </form>
 @endsection()
