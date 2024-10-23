@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
     <!--TITULO DE LA PAGINA-->
@@ -49,27 +49,14 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-center">
-                    {{-- <a href="#" class="data-id-user d-none" data-id="{{Auth::user()->id}}">{{Auth::user()->id}}</a> --}}
+                    <div id="id_user_auth" class="d-none">{{ Session::get('user.id') }}</div>
                     <div class="info">
-                        <a href="" class="d-block">
-                            <div>
-                               {{--  @if (Auth::check())
-                                    {{ Auth::user()->name }} {{ Auth::user()->lastname }}
-                                @else
-                                    Usuario no registrado
-                                @endif --}}
-                                NOMBRE DEL USUARIO
+                        <a href="" class="d-block m-0">
+                            <div class="text-center text-white">
+                                {{ Session::get('user.name') }}
                             </div>
-                            <div class="text-center">
-                                {{-- @if (Auth::check())
-                                    @if (Auth::user()->rol == 1)
-                                        <span>Administrador</span>
-                                    @else
-                                        <span>Invitado</span>
-                                    @endif
-                                @else
-                                    Sin rol
-                                @endif --}}
+                            <div class="text-center text-white">
+                                {{ Session::get('user.email') }}
                             </div>
                         </a>
                     </div>
@@ -82,7 +69,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="{{route('home.index')}}" class="nav-link">
+                            <a href="{{ route('home.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Inicio
@@ -90,7 +77,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('categoria.index')}}" class="nav-link">
+                            <a href="{{ route('categoria.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-layer-group"></i>
                                 <p>
                                     Categorias
@@ -107,7 +94,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('tareas.index')}}" class="nav-link">
+                                    <a href="{{ route('tareas.index') }}" class="nav-link">
                                         <i class="fas fa-check nav-icon"></i>
                                         <p>Completadas</p>
                                     </a>
@@ -135,7 +122,7 @@
                             </a>
                         </li>
                         <li class="nav-item mb-3">
-                            <a href="#" class="nav-link bg-danger">
+                            <a href="{{route('login.index')}}" class="nav-link bg-danger">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>
                                     Cerrar sesión

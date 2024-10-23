@@ -25,10 +25,18 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Inicia sesión con tus credenciales</p>
+                <p class="login-box-msg">Registrate al sistema</p>
 
-                <form action="{{route('login.login')}}" method="post">
+                <form action="{{route('user.register')}}" method="post">
                     @csrf
+                    <div class="input-group mb-3">
+                        <input type="text" name="name" class="form-control" placeholder="Nombre">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
@@ -48,14 +56,14 @@
                     <div class="row">
                         <!-- /.col -->
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block w-100">Iniciar sesión</button>
+                            <button type="submit" class="btn btn-primary btn-block w-100">Registrarse</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
 
                 <p class="mt-2 mb-0">
-                    ¿No tienes cuenta? <a href="{{route('login.registrarse')}}" class="text-center">Registrarse</a>
+                    Ya tengo una cuenta <a href="{{route('login.index')}}" class="text-center">Iniciar sesión</a>
                 </p>
             </div>
             <!-- /.login-card-body -->
